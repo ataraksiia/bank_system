@@ -1,4 +1,4 @@
-def sort_list_by_state(received_list: list, state: str = "EXECUTED") -> list:
+def filter_list_by_state(received_list: list, state: str = "EXECUTED") -> list:
     """Функция, которая принимает на вход список словарей и значение для ключа state
     и возвращает новый список, содержащий только те словари, у которых ключ state
     содержит переданное в функцию значение"""
@@ -10,7 +10,7 @@ def sort_list_by_state(received_list: list, state: str = "EXECUTED") -> list:
     return final_list
 
 
-def sort_list_by_date(received_list: list, reverse: bool = True) -> list:
+def filter_list_by_date(received_list: list, reverse: bool = True) -> list:
     """Функция, которая принимает на вход список словарей и возвращает новый список,
     в котором исходные словари отсортированы по убыванию/возрастанию даты"""
 
