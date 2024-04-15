@@ -16,7 +16,7 @@ from src.widget import card_or_account_data_mask, new_view_date
         ("Счет 73654108430135874305", "Счет **4305"),
     ],
 )
-def test_card_or_account_data_mask(visible_data: str, mask_data: str):
+def test_card_or_account_data_mask(visible_data: str, mask_data: str) -> None:
     assert card_or_account_data_mask(visible_data) == mask_data
 
 
@@ -30,5 +30,5 @@ def test_card_or_account_data_mask(visible_data: str, mask_data: str):
         ("2015-3-1T08:21:33.018941", "1.3.2015"),
     ],
 )
-def test_new_view_date(date: str, mask_date: str):
+def test_new_view_date(date: str, mask_date: str) -> None:
     assert new_view_date(date) == mask_date
