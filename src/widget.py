@@ -5,7 +5,7 @@ def card_or_account_data_mask(visible_data: str) -> str:
     """Функция, которая возвращает информацию и маскированный номер карты или счета"""
 
     # Проверяем, являются ли первые соединенные четыре символа словом "Счет".
-    # Если да, то вызываем функцию account_number_mask из masks.py для маскировки номера счета3
+    # Если да, то вызываем функцию account_number_mask из masks.py для маскировки номера счета
     if "Счет" in visible_data:
         return f"Счет {account_number_mask(visible_data)}"
 
