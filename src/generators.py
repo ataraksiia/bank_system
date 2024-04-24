@@ -21,7 +21,7 @@ def transaction_descriptions(transaction_array: list) -> Iterator:
 def card_number_generator(start: int, end: int) -> Iterator:
     """Функция, которая генерирует номера карт."""
     card_numbers = "0000000000000000"
-    # Нужно сгенерировать столько карт, сколько в end. В зависимости от велечины числа в end, генерируем карты.
+    # Нужно сгенерировать столько карт, сколько в end. В зависимости от величины числа в end, генерируем карты.
     for num in range(start, end + 1):
         if end < 10:
             generate_numbers = card_numbers[:-1] + str(num)
