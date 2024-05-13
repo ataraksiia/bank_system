@@ -8,7 +8,6 @@ from dotenv import load_dotenv
 def get_financial_transactions(json_file: str) -> list:
     """Функция, которая принимает на вход путь до JSON-файла и возвращает список словарей с
     данными о финансовых транзакциях"""
-
     try:
         with open(json_file, "r", encoding="UTF-8") as file:
             parsed_file = list(json.load(file))

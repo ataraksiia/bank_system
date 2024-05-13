@@ -37,18 +37,18 @@ def test_get_transaction_amounts_EUR(mock_get):
         "conversion_rates": {"RUB": 98},
     }
     assert (
-        get_transaction_amounts(
-            {
-                "id": 41428829,
-                "state": "EXECUTED",
-                "date": "2019-07-03T18:35:29.512364",
-                "operationAmount": {"amount": "8221.37", "currency": {"name": "EUR", "code": "EUR"}},
-                "description": "Перевод организации",
-                "from": "MasterCard 7158300734726758",
-                "to": "Счет 35383033474447895560",
-            }
-        )
-        == 805694.2600000001
+            get_transaction_amounts(
+                {
+                    "id": 41428829,
+                    "state": "EXECUTED",
+                    "date": "2019-07-03T18:35:29.512364",
+                    "operationAmount": {"amount": "8221.37", "currency": {"name": "EUR", "code": "EUR"}},
+                    "description": "Перевод организации",
+                    "from": "MasterCard 7158300734726758",
+                    "to": "Счет 35383033474447895560",
+                }
+            )
+            == 805694.2600000001
     )
     mock_get.assert_called_once_with(
         f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/EUR", headers={"apikey": API_KEY}
@@ -69,18 +69,18 @@ def test_get_transaction_amounts_USD(mock_get):
         "conversion_rates": {"RUB": 98},
     }
     assert (
-        get_transaction_amounts(
-            {
-                "id": 41428829,
-                "state": "EXECUTED",
-                "date": "2019-07-03T18:35:29.512364",
-                "operationAmount": {"amount": "8221.37", "currency": {"name": "USD", "code": "USD"}},
-                "description": "Перевод организации",
-                "from": "MasterCard 7158300734726758",
-                "to": "Счет 35383033474447895560",
-            }
-        )
-        == 805694.2600000001
+            get_transaction_amounts(
+                {
+                    "id": 41428829,
+                    "state": "EXECUTED",
+                    "date": "2019-07-03T18:35:29.512364",
+                    "operationAmount": {"amount": "8221.37", "currency": {"name": "USD", "code": "USD"}},
+                    "description": "Перевод организации",
+                    "from": "MasterCard 7158300734726758",
+                    "to": "Счет 35383033474447895560",
+                }
+            )
+            == 805694.2600000001
     )
     mock_get.assert_called_once_with(
         f"https://v6.exchangerate-api.com/v6/{API_KEY}/latest/USD", headers={"apikey": API_KEY}
@@ -90,16 +90,16 @@ def test_get_transaction_amounts_USD(mock_get):
 @patch("requests.get")
 def test_get_transaction_amounts_RUB(mock_get):
     assert (
-        get_transaction_amounts(
-            {
-                "id": 41428829,
-                "state": "EXECUTED",
-                "date": "2019-07-03T18:35:29.512364",
-                "operationAmount": {"amount": "8221.37", "currency": {"name": "RUB", "code": "RUB"}},
-                "description": "Перевод организации",
-                "from": "MasterCard 7158300734726758",
-                "to": "Счет 35383033474447895560",
-            }
-        )
-        == 8221.37
+            get_transaction_amounts(
+                {
+                    "id": 41428829,
+                    "state": "EXECUTED",
+                    "date": "2019-07-03T18:35:29.512364",
+                    "operationAmount": {"amount": "8221.37", "currency": {"name": "RUB", "code": "RUB"}},
+                    "description": "Перевод организации",
+                    "from": "MasterCard 7158300734726758",
+                    "to": "Счет 35383033474447895560",
+                }
+            )
+            == 8221.37
     )
