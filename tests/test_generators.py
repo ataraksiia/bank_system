@@ -81,7 +81,7 @@ def test_transaction_descriptions(name_operations: list) -> None:
 
 @pytest.fixture
 def generate_numbers() -> list:
-    return ["0000 0000 0000 0001", "0000 0000 0000 0002", "0000 0000 0000 0003"]
+    return ["0000000000000001", "0000000000000002", "0000000000000003"]
 
 
 def test_card_number_generator(generate_numbers: list) -> None:
