@@ -1,6 +1,8 @@
 import os
-from unittest.mock import patch, Mock
+from unittest.mock import Mock, patch
+
 from dotenv import load_dotenv
+
 from src.utils import get_financial_transactions, get_transaction_amounts
 
 

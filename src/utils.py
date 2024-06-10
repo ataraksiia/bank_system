@@ -17,10 +17,10 @@ def get_financial_transactions(json_file: str) -> list:
         with open(json_file, "r", encoding="UTF-8") as file:
             parsed_file = list(json.load(file))
     except Exception:
-        logger.info("transactions []")
+        logger.info("csv_excel []")
         return []
     else:
-        logger.info(f"transactions {parsed_file}")
+        logger.info(f"csv_excel {parsed_file}")
         return parsed_file
 
 
