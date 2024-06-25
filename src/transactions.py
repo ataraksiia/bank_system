@@ -1,5 +1,3 @@
-from typing import Any
-
 import pandas as pd
 
 
@@ -10,12 +8,8 @@ def read_transactions_csv_file(csv_file: str) -> list:
     return data
 
 
-def read_transactions_xlsx_file(xlsx_file: str) -> Any:
+def read_transactions_xlsx_file(xlsx_file: str) -> list:
     """Считывание финансовые операций с XLSX файла и возвращает DataFrame"""
     reader = pd.read_excel(xlsx_file)
     data = reader.to_dict(orient="records")
     return data
-
-
-print(read_transactions_csv_file("../csv_excel/transactions.csv"))
-print(read_transactions_xlsx_file("../csv_excel/transactions_excel.xlsx"))
