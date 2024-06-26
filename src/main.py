@@ -7,6 +7,7 @@ from src.widget import card_or_account_data_mask, new_view_date
 
 
 def select_the_file_format() -> list:
+    """Функция, которая открывает файл в зависимости от формата файла"""
     user_input = input(
         """Привет! Добро пожаловать в программу работы с банковскими транзакициями.
     Выберите необходимый пункт меню:
@@ -27,8 +28,11 @@ def select_the_file_format() -> list:
 
 
 def select_of_operation_status(data: list[dict]) -> list[dict]:
-    user_input = input("""Введите статус по которому необходимо выполнить фильтрацию.
-Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING\n""")
+    """Функция, которая фильтрует транзакции по типу операции"""
+    user_input = input(
+        """Введите статус по которому необходимо выполнить фильтрацию.
+Доступные для фильтровки статусы: EXECUTED, CANCELED, PENDING\n"""
+    )
     while user_input.upper() != "EXECUTED" or user_input.upper() != "CANCELED" or user_input.upper() != "PENDING":
         if user_input.upper() == "EXECUTED":
             print('Операции отфильтрованы по статусу "EXECUTED"')
@@ -52,6 +56,7 @@ def select_of_operation_status(data: list[dict]) -> list[dict]:
 
 
 def operation_output_format(data: list[dict]) -> list[dict]:
+    """Функция, которая фильтрует транзакции по дате и порядку"""
     sort_by_date = input("Отсортировать операции по дате? Да/Нет\n").lower()
     if sort_by_date == "да":
         sort_by_value = input("Отсортировать по возрастанию или по убыванию?\n").lower()
@@ -63,6 +68,7 @@ def operation_output_format(data: list[dict]) -> list[dict]:
 
 
 def operation_output_format_2(data: list[dict]) -> list[dict]:
+    """Функция, которая фильтрует транзакции по валюте"""
     sort_by_currency = input("Выводить только рублевые тразакции? Да/Нет\n").lower()
     new_data = []
     if sort_by_currency == "да":
@@ -79,6 +85,7 @@ def operation_output_format_2(data: list[dict]) -> list[dict]:
 
 
 def operation_output_format_3(data: list[dict]) -> list[dict]:
+    """Функция, которая фильтрует транзакции по определенному слову"""
     sort_by_word = input("Отфильтровать список транзакций по определенному слову в описании? Да/Нет\n").lower()
     if sort_by_word == "да":
         print("Введите слово")
@@ -88,6 +95,7 @@ def operation_output_format_3(data: list[dict]) -> list[dict]:
 
 
 def output(data: list[dict]) -> None:
+    """Функция, которая собирает транзакцию в нужный формат вывода"""
     is_json = False
     for object in data:
         if "operationAmount" in object.keys():
