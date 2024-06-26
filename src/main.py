@@ -55,7 +55,7 @@ def select_of_operation_status(data: list[dict]) -> list[dict]:
     return data
 
 
-def operation_output_format(data: list[dict]) -> list[dict]:
+def filter_by_date_and_order(data: list[dict]) -> list[dict]:
     """Функция, которая фильтрует транзакции по дате и порядку"""
     sort_by_date = input("Отсортировать операции по дате? Да/Нет\n").lower()
     if sort_by_date == "да":
@@ -67,7 +67,7 @@ def operation_output_format(data: list[dict]) -> list[dict]:
     return data
 
 
-def operation_output_format_2(data: list[dict]) -> list[dict]:
+def filter_by_currency(data: list[dict]) -> list[dict]:
     """Функция, которая фильтрует транзакции по валюте"""
     sort_by_currency = input("Выводить только рублевые тразакции? Да/Нет\n").lower()
     new_data = []
@@ -84,7 +84,7 @@ def operation_output_format_2(data: list[dict]) -> list[dict]:
     return data
 
 
-def operation_output_format_3(data: list[dict]) -> list[dict]:
+def filter_by_word(data: list[dict]) -> list[dict]:
     """Функция, которая фильтрует транзакции по определенному слову"""
     sort_by_word = input("Отфильтровать список транзакций по определенному слову в описании? Да/Нет\n").lower()
     if sort_by_word == "да":
@@ -141,9 +141,9 @@ def output(data: list[dict]) -> None:
 if __name__ == "__main__":
     data = select_the_file_format()
     data = select_of_operation_status(data)
-    data = operation_output_format(data)
-    data = operation_output_format_2(data)
-    data = operation_output_format_3(data)
+    data = filter_by_date_and_order(data)
+    data = filter_by_currency(data)
+    data = filter_by_word(data)
     print("Распечатываю итоговый список транзакций...\n")
     count = 0
     for i in data:
